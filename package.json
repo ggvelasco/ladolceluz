@@ -1,0 +1,35 @@
+{
+  "name": "la-dolce-luz",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Confra 2026 Martin Luz — reserva de poltronas do transfer",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "start": "node server/index.js",
+    "preview": "npm run build && npm run start",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "dependencies": {
+    "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
+    "@fontsource/bigelow-rules": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "@gsap/react": "^2.1.2",
+    "express": "^5.3.0",
+    "gsap": "^3.15.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  }
+}
