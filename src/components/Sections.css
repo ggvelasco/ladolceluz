@@ -1,0 +1,324 @@
+/* ───────────── Roteiro ───────────── */
+.itinerary {
+  position: relative;
+  padding: clamp(48px, 9vh, 110px) var(--gutter) clamp(90px, 14vh, 160px);
+  background: var(--cream);
+}
+
+.itinerary__title {
+  text-align: center;
+  margin-bottom: clamp(26px, 4vh, 44px);
+}
+
+.itinerary__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.400vw, 32px);
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.placa {
+  --tile: clamp(72px, 8vw, 108px);
+  padding: clamp(14px, 1.800vw, 24px);
+  background-position: center;
+}
+
+.placa__pill {
+  --frame-gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.400vw, 34px);
+  min-height: clamp(128px, 15vw, 190px);
+  padding: 18px clamp(26px, 4.200vw, 64px);
+  border-radius: 999px;
+  transition: transform 0.5s var(--ease-back);
+}
+
+.placa:hover .placa__pill {
+  transform: scale(1.025) rotate(-0.6deg);
+}
+
+.placa__icon {
+  flex: none;
+  width: clamp(64px, 8.400vw, 122px);
+  aspect-ratio: 1.15;
+  transition: transform 0.6s var(--ease-back);
+}
+
+.placa:hover .placa__icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.placa__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.placa__label {
+  font-size: clamp(0.620rem, 0.900vw, 0.760rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.placa__value {
+  font-size: clamp(3.400rem, 7.200vw, 6.600rem);
+  color: var(--terracotta);
+}
+
+.placa__pill--long .placa__value {
+  font-size: clamp(2.300rem, 3.900vw, 3.600rem);
+  line-height: 0.96;
+}
+
+.placa__note {
+  margin-top: 2px;
+  font-size: clamp(0.960rem, 1.350vw, 1.250rem);
+  color: var(--terracotta);
+}
+
+/* ───────────── Faixa corrida ───────────── */
+.marquee {
+  position: relative;
+  z-index: 2;
+  width: 106vw;
+  margin: -46px 0 -46px -3vw;
+  padding: 12px 0 9px;
+  overflow: hidden;
+  background: var(--terracotta);
+  color: var(--cream);
+  rotate: -1.700deg;
+  box-shadow: 0 10px 0 var(--blue);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee__group {
+  display: flex;
+  flex: none;
+}
+
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(18px, 2.600vw, 36px);
+  padding-right: clamp(18px, 2.600vw, 36px);
+  font-size: clamp(2.300rem, 4.700vw, 3.900rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.marquee__sep {
+  width: 0.62em;
+  height: 0.62em;
+  color: var(--cream);
+}
+
+/* ───────────── Check-in em 3 passos ───────────── */
+.steps {
+  position: relative;
+  padding: clamp(110px, 17vh, 190px) var(--gutter) clamp(120px, 18vh, 200px);
+  background: var(--sky);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Ondinhas claras deslizando: a água da piscina. */
+.steps__water {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='70' viewBox='0 0 240 70'%3E%3Cpath d='M0 18c20-12 40 12 60 0s40 12 60 0 40 12 60 0 40 12 60 0M-30 53c20-12 40 12 60 0s40 12 60 0 40 12 60 0 40 12 60 0 40 12 60 0' fill='none' stroke='%23fff' stroke-width='2.400' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 240px 70px;
+  pointer-events: none;
+}
+
+.steps__head,
+.steps__list,
+.steps__cta {
+  position: relative;
+}
+
+.steps__head .eyebrow {
+  color: var(--blue);
+}
+
+.steps__title {
+  margin-top: 10px;
+  font-size: clamp(3.800rem, 10.500vw, 9.400rem);
+  color: var(--blue);
+}
+
+.steps__lead {
+  max-width: 22em;
+  margin: 14px auto 0;
+  font-size: clamp(1.300rem, 2.200vw, 1.900rem);
+  color: var(--ink);
+}
+
+.steps__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 44px);
+  max-width: 1140px;
+  margin: clamp(40px, 7vh, 76px) auto clamp(40px, 7vh, 70px);
+}
+
+.postal-wrap {
+  filter: drop-shadow(0 16px 20px rgba(1, 1, 45, 0.22));
+}
+
+.postal-wrap:nth-child(1) {
+  rotate: -3deg;
+}
+
+.postal-wrap:nth-child(2) {
+  rotate: 1.800deg;
+  translate: 0 22px;
+}
+
+.postal-wrap:nth-child(3) {
+  rotate: -1.400deg;
+}
+
+.postal {
+  --pitch: 18px;
+  position: relative;
+  height: 100%;
+  padding: 16px;
+  background: var(--paper);
+  -webkit-mask:
+    linear-gradient(#000 0 0) center / calc(100% - var(--pitch)) calc(100% - var(--pitch)) no-repeat,
+    radial-gradient(circle 5.600px at 50% 50%, transparent 97%, #000) calc(var(--pitch) / -2) calc(var(--pitch) / -2) /
+      var(--pitch) var(--pitch) round;
+  mask:
+    linear-gradient(#000 0 0) center / calc(100% - var(--pitch)) calc(100% - var(--pitch)) no-repeat,
+    radial-gradient(circle 5.600px at 50% 50%, transparent 97%, #000) calc(var(--pitch) / -2) calc(var(--pitch) / -2) /
+      var(--pitch) var(--pitch) round;
+  transition: transform 0.5s var(--ease-back);
+}
+
+.postal-wrap:hover .postal {
+  transform: translateY(-8px) rotate(1.500deg);
+}
+
+.postal__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: clamp(18px, 2.200vw, 30px) clamp(16px, 2vw, 26px) clamp(22px, 2.600vw, 34px);
+  border: 1.5px solid var(--terracotta);
+  background: var(--cream);
+}
+
+.postal__top {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  align-self: flex-start;
+  color: var(--terracotta);
+}
+
+.postal__num {
+  font-size: clamp(4rem, 6.600vw, 6.200rem);
+  line-height: 0.8;
+}
+
+.postal__tag {
+  font-size: 0.680rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.postal__icon {
+  width: clamp(96px, 11vw, 140px);
+  aspect-ratio: 1.1;
+  margin: clamp(8px, 1.400vw, 20px) 0 clamp(14px, 1.800vw, 24px);
+}
+
+.postal__text {
+  font-size: clamp(1rem, 1.250vw, 1.120rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--blue);
+}
+
+.postal__aside {
+  margin-top: 10px;
+  font-size: 1.060rem;
+  font-style: italic;
+  line-height: 1.25;
+  color: var(--terracotta);
+}
+
+/* Carimbo postal sobre o selo. */
+.postal__mark {
+  position: absolute;
+  top: 12px;
+  right: -8px;
+  width: clamp(104px, 11vw, 138px);
+  rotate: 12deg;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.600;
+  stroke-linecap: round;
+  opacity: 0.62;
+  pointer-events: none;
+}
+
+.postal__mark text {
+  fill: var(--blue);
+  stroke: none;
+  font-family: var(--font-sans);
+  font-size: 9.500px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* ───────────── Responsivo ───────────── */
+@media (max-width: 860px) {
+  .itinerary__grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+
+  .placa__pill {
+    min-height: 124px;
+  }
+
+  .placa__icon {
+    width: 76px;
+  }
+
+  .placa__value {
+    font-size: clamp(3.400rem, 15vw, 4.800rem);
+  }
+
+  .placa__pill--long .placa__value {
+    font-size: clamp(2.300rem, 9.400vw, 3.300rem);
+  }
+
+  .steps__list {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    gap: 30px;
+  }
+
+  .postal-wrap:nth-child(2) {
+    translate: 0;
+  }
+
+  .postal__icon {
+    width: 118px;
+  }
+}
